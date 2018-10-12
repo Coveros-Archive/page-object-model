@@ -6,6 +6,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.coveros.test.selenium.pom.PageObject;
 
+/**
+ * https://www.coveros.com/products/secure-ci/
+ * 
+ * @author brian
+ *
+ */
 public class SecureCiProductPage extends PageObject{
 
 	public BlogPostPage clickOnBlogPost (String blogPostName) {

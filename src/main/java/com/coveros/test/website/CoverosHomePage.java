@@ -7,6 +7,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.coveros.test.selenium.pom.PageObject;
 
+/**
+ * https://www.coveros.com
+ */
 public class CoverosHomePage extends PageObject {
 
 	public SecureCiProductPage clickSecureCi() {
