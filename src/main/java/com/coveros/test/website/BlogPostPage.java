@@ -1,20 +1,26 @@
 package com.coveros.test.website;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import com.coveros.test.selenium.pom.PageObject;
 
+/**
+ * Generic page object that can be used to represent andy blog post page.
+ * 
+ * @author brian
+ *
+ */
 public class BlogPostPage extends PageObject {
 
-	@FindBy(xpath = "//*[@id=\"header\"]/div[2]/div/div/div/h1")
-	private WebElement title;
+	private By titleElement = By.xpath("//*[@id=\"header\"]/div[2]/div/div/div/h1");
 
 	public String getPageTitle() {
 		return driver.getTitle();
 	}
 
 	public String getBlogPostTitle() {
-		return title.getText();
+		return driver.findElement(titleElement).getText();
 	}
 }

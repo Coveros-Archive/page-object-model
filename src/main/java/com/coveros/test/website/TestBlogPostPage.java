@@ -57,14 +57,15 @@ public class TestBlogPostPage {
 		PageObjectFactory factory = PageObjectFactory.newInstance(driver, "https://coveros.com");
 
 		homePage = factory.newPage(CoverosHomePage.class);
-		new WebDriverWait(driver, 10000).until(
-				ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/header/div[2]/div/div/div[1]/h1")));
+		new WebDriverWait(driver, 10000)
+				.until(ExpectedConditions.presenceOfElementLocated(CoverosHomePage.taglineElement));
 	}
 
 	@Test
 	public void testBlogPostJourney() {
 		SecureCiProductPage productPage = homePage.clickSecureCi();
 		BlogPostPage blogPostPage = productPage.clickOnBlogPost("Setting Up Selenified Using Maven");
+
 		assertEquals("Setting Up Selenified Testing Framework Using Maven | Coveros", blogPostPage.getPageTitle());
 		assertEquals("Setting Up Selenified Using Maven", blogPostPage.getBlogPostTitle());
 	}
